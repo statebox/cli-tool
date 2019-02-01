@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "This is a (temporary) tool that does various useful stuff.",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "bin": {
+    "stbx": "./stbx-cli.js",
+    "stbx-codec": "./stbx-cli-codec.js"
   },
   "repository": {
     "type": "git",

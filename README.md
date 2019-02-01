@@ -15,4 +15,27 @@ TODO ~~Just `npm i -g @statebox/stbx-cli`~~
 
 ## Usage
 
-TODO
+```sh
+$ echo '{"previous":"deadc0de","firing":{"execution":"beefbabe","path":[0]}}' > file
+$ cat file | node stbx-cli-codec.js --encode
+0a04deadc0de12080a04beefbabe1000
+```
+
+```sh
+$ echo "0a04deadc0de12080a04beefbabe1000" | node stbx-cli-codec.js --decode
+{"previous":"deadc0de","firing":{"execution":"beefbabe","path":[0]}}
+```
+
+also `node stbx-cli.js --help`
+
+```
+Usage: stbx-cli [options] [command]
+
+Options:
+  -V, --version  output the version number
+  -h, --help     output usage information
+
+Commands:
+  codec          work with transactions
+  help [cmd]     display help for [cmd]
+```
