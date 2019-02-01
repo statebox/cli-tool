@@ -7,6 +7,9 @@
     "stbx": "./stbx-cli.js",
     "stbx-codec": "./stbx-cli-codec.js"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/statebox/cli-tool.git"
