@@ -1,0 +1,25 @@
+{
+  "name": "cli-tool.git",
+  "version": "1.0.0",
+  "description": "This is a (temporary) tool that does various useful stuff.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/statebox/cli-tool.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "AGPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/statebox/cli-tool/issues"
+  },
+  "homepage": "https://github.com/statebox/cli-tool#readme",
+  "dependencies": {
+    "@statebox/stbx-js": "0.0.21",
+    "commander": "^2.19.0",
+    "get-stdin": "^6.0.0"
+  }
+}
