@@ -1,7 +1,7 @@
 {
-  "name": "cli-tool.git",
-  "version": "1.0.0",
-  "description": "This is a (temporary) tool that does various useful stuff.",
+  "name": "@statebox/stbx-cli",
+  "version": "0.0.1",
+  "description": "This is a (temporary) tool that does various useful statebox things.",
   "main": "index.js",
   "bin": {
     "stbx": "./stbx-cli.js",
@@ -11,8 +11,10 @@
     "type": "git",
     "url": "git+https://github.com/statebox/cli-tool.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "statebox", "commandline"
+  ],
+  "author": "Jelle <wires@statebox.io>",
   "license": "AGPL-3.0-or-later",
   "bugs": {
     "url": "https://github.com/statebox/cli-tool/issues"
