@@ -15,7 +15,8 @@
     "url": "git+https://github.com/statebox/cli-tool.git"
   },
   "keywords": [
-    "statebox", "commandline"
+    "statebox",
+    "commandline"
   ],
   "author": "Jelle <wires@statebox.io>",
   "license": "AGPL-3.0-or-later",
@@ -24,7 +25,7 @@
   },
   "homepage": "https://github.com/statebox/cli-tool#readme",
   "dependencies": {
-    "@statebox/stbx-js": "0.0.21",
+    "@statebox/stbx-js": "0.0.22",
     "commander": "^2.19.0",
     "get-stdin": "^6.0.0"
   }
