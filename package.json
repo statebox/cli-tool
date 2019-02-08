@@ -5,7 +5,9 @@
   "main": "index.js",
   "bin": {
     "stbx": "./stbx-cli.js",
-    "stbx-codec": "./stbx-cli-codec.js"
+    "stbx-codec": "./stbx-cli-codec.js",
+    "stbx-convert": "./stbx-cli-convert.js",
+    "stbx-serve": "./stbx-cli-serve.js"
   },
   "publishConfig": {
     "access": "public"
@@ -27,6 +29,7 @@
   "dependencies": {
     "@statebox/stbx-js": "0.0.22",
     "commander": "^2.19.0",
-    "get-stdin": "^6.0.0"
+    "get-stdin": "^6.0.0",
+    "lite-server": "^2.4.0"
   }
 }
