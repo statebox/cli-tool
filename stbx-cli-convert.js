@@ -1,57 +1,64 @@
 #!/usr/bin/env node
+const R = require('ramda')
 const {program, exit_error, exit_success, get_input_json, get_input, put_output } = require("./util.js")
+const {parse, to_nll, to_nbpt} = require("@statebox/pnpro.js")
+
+let help = () => console.log(`
+Examples:
+        
+    # Convert all Petri nets in a GreatSPN project:    
+    stbx convert -i project.pnpro --all --format nbpt -o project.nets.json
+
+    # Extract single petrinet net
+    stbx convert -i project.pnpro --one "testNet" --format nll
+`)
 
 program
-    .option('-l, --list', 'List available Petri nets in PNPRO file')
-    .option('-n, --net [name]', 'Extract one net')
-    .option('-d, --all', 'Extract all nets to a list of objects')
-    .option('-f, --format', 'Specify output format: nll or nbpt')
+    .on('--help', help)
+    .option('-l, --list', 'List available pages (Petri nets) in PNPRO project file')
+    .option('--one [name]', 'Extract single net by name')
+    .option('--all', 'Extract all nets as a dictionary')
+    .option('-f, --format [format]', 'Specify output format: `nll` or `nbpt`')
     .parse(process.argv);
 
-// function encode_or_fail(obj) {
-//     try {
-//         console.log(JSON.stringify(obj.wiring))
-//         const Stbx = require("@statebox/stbx-js")
-//         if (!obj.wiring && !obj.firing) {
-//             exit_error('tx must have .firing or .wiring property')
-//         } else {
-//             console.log(obj)
-//             let e = Stbx.encode(obj)
-//             if (e.trim() === "") {
-//                 exit_error('something went wrong encoding, returned empty string!')
-//             } else {
-//                 return Buffer.from(e, 'hex')
-//             }
-//         }
-//     } catch(e) {
-//         exit_error(`failed to encode, ${e.message}`)
-//     }
-// }
-
-// function decode_or_fail(buf) {
-//     try {
-//         const Stbx = require("@statebox/stbx-js")
-//         return Stbx.decode(buf.toString('hex'))
-//     } catch(e) {
-//         exit_error(`failed to decode, ${e.message}`)
-//     }
-// }
+function list_available(project) {
+    let pages = R.keys(project.nets)
+    R.forEach(p => console.log(`"${p}"`), pages)
+}
 
 async function main () {
-    if(program.all && program.name) {
-        exit_error('must pass either --all or --name, not both')    
+    if(program.all && program.one) {
+        exit_error('must pass either --all or --one, not both')    
     }
 
     if(program.list && program.all) {
-        exit_error('must pass either --list or --name/--all, not both')    
+        exit_error('must pass either --list or --all, not both')    
     }
 
-    // run encoding
+    if(program.list && program.one) {
+        exit_error('must pass either --list or --one, not both')    
+    }
+    
+    // lets read the input and parse the file
+    let pnproFile = await get_input()
+    let project = parse(pnproFile)
+
     if(program.list) {
-        let pnproFile = await get_input()
-        // let output = encode_or_fail(parsed)
-        put_output('lol')
+        list_available(project);
         exit_success()
+    }
+
+    let converter =  (R.toLower(program.format) === "nll") ? to_nll : to_nbpt
+
+    if(program.one) {
+        let pnproPage = project.nets[program.one]
+        let output = converter(pnproPage)
+        put_output(JSON.stringify(output))
+    }
+    
+    if(program.all) {
+        let output = R.map(converter, project.nets)
+        put_output(JSON.stringify(output))
     }
 }
 

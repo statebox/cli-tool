@@ -1,7 +1,19 @@
 #!/usr/bin/env node
 const {program, exit_error, exit_success, get_input_json, get_input, put_output } = require("./util.js")
 
+let help = () => console.log(`
+Examples:
+
+    # Encoding a transition firing:
+    echo '{"firing":{"execution":"aabbeeff","path":[0]},"previous":"00aaff22"}' > tx.json
+    cat tx.json | stbx codec -e -o tx.hex
+    
+    # Decoding a hexadecimally encoded transaction back to JSON:
+    stbx codec -d -i tx.hex
+`)
+
 program
+    .on('--help', help)
     .option('-e, --encode', 'Encode message')
     .option('-d, --decode', 'Decode message')
     .parse(process.argv);

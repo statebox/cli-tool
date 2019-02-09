@@ -27,6 +27,7 @@
   },
   "homepage": "https://github.com/statebox/cli-tool#readme",
   "dependencies": {
+    "@statebox/pnpro.js": "0.0.2",
     "@statebox/stbx-js": "0.0.22",
     "commander": "^2.19.0",
     "get-stdin": "^6.0.0",

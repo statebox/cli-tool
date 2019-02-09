@@ -78,6 +78,21 @@ $ echo 'feedc0de' | stbx hash                                     fafec8b68b40c9
 
 Convert PNPRO to statebox petrinet representation.
 
+```
+Usage: stbx-cli-convert [options]
+
+Options:
+  -V, --version            output the version number
+  -i, --input [filename]   File to read input from
+  -o, --output [filename]  File to write output to
+  -F, --force              Force file overwrite
+  -l, --list               List available pages (Petri nets) in PNPRO project file.
+  -1, --one [name]         Extract single net by name.
+  -a, --all                Extract all nets as a dictionary.
+  -f, --format [format]    Specify output format: `nll` or `nbpt`.
+  -h, --help               output usage information
+```
+
 The output format is specified with `--format` and is either either:
 
 - `nbpt` ~ Nano-Bipartite Graph
@@ -90,14 +105,12 @@ Usage:
 stbx convert -i myProject.pnpro --list 
 
 # pick one and output as NBPT
-stbx convert -i myProject.pnpro --net "name" --format=nbpt
+stbx convert -i myProject.pnpro --one "name" --format=nbpt
 ```
 
 ```
-# convert all and write to `myProject.nets`
+# convert all and write to `myProject.nets` as NLL
 stbx convert -i myProject.pnpro --all -o myProject.nets
 ```
 
-
-
-If you convert with `--all`, the output format is a JSON list of either `nbpt` or `nll` object.
+If you convert with `--all`, the output format is a JSON dictionary of either `nbpt` or `nll` object, indexed by page title.
