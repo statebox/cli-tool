@@ -1,12 +1,13 @@
 {
   "name": "@statebox/stbx-cli",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "This is a (temporary) tool that does various useful statebox things.",
   "main": "index.js",
   "bin": {
     "stbx": "./stbx-cli.js",
     "stbx-codec": "./stbx-cli-codec.js",
     "stbx-convert": "./stbx-cli-convert.js",
+    "stbx-hash": "./stbx-cli-hash.js",
     "stbx-serve": "./stbx-cli-serve.js"
   },
   "publishConfig": {
