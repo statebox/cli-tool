@@ -20,12 +20,10 @@ program
 
 function encode_or_fail(obj) {
     try {
-        console.log(JSON.stringify(obj.wiring))
         const Stbx = require("@statebox/stbx-js")
         if (!obj.wiring && !obj.firing) {
             exit_error('tx must have .firing or .wiring property')
         } else {
-            console.log(obj)
             let e = Stbx.encode(obj)
             if (e.trim() === "") {
                 exit_error('something went wrong encoding, returned empty string!')

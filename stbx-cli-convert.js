@@ -1,7 +1,7 @@
 #!/usr/bin/env node
-const R = require('ramda')
-const {program, exit_error, exit_success, get_input_json, get_input, put_output } = require("./util.js")
-const {parse, to_nll, to_nbpt} = require("@statebox/pnpro.js")
+let R = require('ramda')
+let {program, exit_error, exit_success, get_input_json, get_input, put_output } = require("./util.js")
+let {parse, to_nll, to_nbpt} = require("@statebox/pnpro.js")
 
 let help = () => console.log(`
 Examples:

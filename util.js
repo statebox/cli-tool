@@ -1,9 +1,8 @@
 #!/usr/bin/env node
-const fs = require('fs')
+let fs = require('fs')
 
 // setup basic options `ioFV`
 const program = require('commander')
-    .version('0.1.0')
     .option('-i, --input [filename]', 'File to read input from')
     .option('-o, --output [filename]', 'File to write output to')
     .option('--force', 'Force file overwrite')
