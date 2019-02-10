@@ -1,6 +1,6 @@
 {
   "name": "@statebox/stbx-cli",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "This is a (temporary) tool that does various useful statebox things.",
   "main": "index.js",
   "bin": {
@@ -32,6 +32,7 @@
     "@statebox/stbx-js": "0.0.22",
     "commander": "^2.19.0",
     "get-stdin": "^6.0.0",
-    "lite-server": "^2.4.0"
+    "lite-server": "^2.4.0",
+    "ramda": "^0.26.1"
   }
 }
