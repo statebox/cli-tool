@@ -7,6 +7,9 @@ Examples:
     # Encoding a transition firing:
     echo '{"firing":{"execution":"aabbeeff","path":[0]},"previous":"00aaff22"}' > tx.json
     cat tx.json | stbx codec -e -o tx.hex
+
+    echo '{"wiring":{"nets":[{"name":"foo","names":["a","b"],"partition":[0,1,0,1,0,0]}],"diagrams":[{"name":"z","width":1,"pixels":[1],"names":["z"]}],"labels":[0]},"previous":"0a0a0a0a"}' > tx2.json
+    cat tx.json | stbx codec -e -o tx2.hex
     
     # Decoding a hexadecimally encoded transaction back to JSON:
     stbx codec -d -i tx.hex

@@ -3,11 +3,11 @@
 This is a (temporary) tool that is supposed to do various useful thingss.
 
 - Encode & decode transactions
-- ~~Compute hashes~~
-- ~~Create EC keypairs~~
-- ~~Sign transactions~~
-- ~~Verify signatures~~
+- Convert file formats
+- Compute hashes
 - ~~Communicate with the API~~
+- ~~Create EC keypairs~~
+- ~~Sign transactions & Verify signatures~~
 
 ## Installation
 
