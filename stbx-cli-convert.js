@@ -18,7 +18,7 @@ program
     .option('-l, --list', 'List available pages (Petri nets) in PNPRO project file')
     .option('--one [name]', 'Extract single net by name')
     .option('--all', 'Extract all nets as a dictionary')
-    .option('-f, --format [format]', 'Specify output format: `nll` or `nbpt`')
+    .option('-f, --format [format]', 'Specify output format: `nll` or `nbpt` (default)', 'nbpt')
     .parse(process.argv);
 
 function list_available(project) {
@@ -48,10 +48,14 @@ async function main () {
         exit_success()
     }
 
-    let converter =  (R.toLower(program.format) === "nll") ? to_nll : to_nbpt
+    let converter =  R.toLower(program.format) === "nll" ? to_nll : to_nbpt
 
     if(program.one) {
         let pnproPage = project.nets[program.one]
+        if(!pnproPage)  {
+            exit_error(`No such page, '${program.one}'`)
+        }
+
         let output = converter(pnproPage)
         put_output(JSON.stringify(output))
     }
