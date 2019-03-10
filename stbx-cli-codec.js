@@ -24,8 +24,8 @@ program
 function encode_or_fail(obj) {
     try {
         const Stbx = require("@statebox/stbx-js")
-        if (!obj.wiring && !obj.firing) {
-            exit_error('tx must have .firing or .wiring property')
+        if (!obj.wiring && !obj.firing && !obj.root) {
+            exit_error('tx must have .firing, .wiring or .root property')
         } else {
             let e = Stbx.encode(obj)
             if (e.trim() === "") {
