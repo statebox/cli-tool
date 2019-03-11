@@ -1,6 +1,6 @@
 {
   "name": "stbx",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "This is a (temporary) tool that does various useful statebox things.",
   "main": "./stbx-cli.js",
   "bin": {
