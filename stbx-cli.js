@@ -14,6 +14,7 @@ program
     .command('codec', 'encode and decode transactions')
     .command('hash', 'compute hash of hexadecimal input')
     .command('convert', 'convert PNPRO files to statebox Petri nets')
-    .command('serve', 'start webserver')
+    .command('discrete-wiring', 'create wiring transactions')
+    // .command('serve', 'start webserver')
     //.command('crypto','work with keypairs')
     .parse(process.argv);
