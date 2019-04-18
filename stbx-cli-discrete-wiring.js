@@ -9,7 +9,7 @@ Examples:
     # create a dictionary of nbpt nets
     stbx convert -i project.pnpro --all --format nbpt -o project.nets.json
 
-    # create transactions for tensor product wiring diagram
+    # create wiring transactions for specific root
     stbx discrete-wiring -i project.nets.json --message guts-test-1 --o
 `)
 

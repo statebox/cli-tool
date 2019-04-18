@@ -1,6 +1,6 @@
 {
   "name": "stbx",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "description": "This is a (temporary) tool that does various useful statebox things.",
   "main": "./stbx-cli.js",
   "bin": {
@@ -8,7 +8,8 @@
     "stbx-codec": "./stbx-cli-codec.js",
     "stbx-convert": "./stbx-cli-convert.js",
     "stbx-hash": "./stbx-cli-hash.js",
-    "stbx-serve": "./stbx-cli-serve.js"
+    "stbx-discrete-wiring": "./stbx-cli-discrete-wiring.js",
+    "stbx-contract-api": "./stbx-cli-contract-api.js"
   },
   "publishConfig": {
     "access": "public"
