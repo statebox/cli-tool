@@ -1,6 +1,6 @@
 {
   "name": "stbx",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "description": "This is a (temporary) tool that does various useful statebox things.",
   "main": "./stbx-cli.js",
   "bin": {
@@ -42,8 +42,5 @@
     "commander": "^4.1.0",
     "get-stdin": "^7.0.0",
     "ramda": "^0.26.1"
-  },
-  "devDependencies": {
-    "npm-check-updates": "^4.0.1"
   }
 }
