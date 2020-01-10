@@ -42,7 +42,7 @@ async function get_raw_input () {
             exit_error(`input file "${fn}" does not exist`)
         }
         // TODO check directory?
-        return fs.readFileSync(fn)
+        return fs.readFileSync(fn, {encoding: 'utf-8'})
     } else {
         // read from standard input
         return require("get-stdin").buffer()

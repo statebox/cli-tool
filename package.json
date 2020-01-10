@@ -1,6 +1,6 @@
 {
   "name": "stbx",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "description": "This is a (temporary) tool that does various useful statebox things.",
   "main": "./stbx-cli.js",
   "bin": {
@@ -37,10 +37,13 @@
   },
   "homepage": "https://github.com/statebox/cli-tool#readme",
   "dependencies": {
-    "@statebox/pnpro.js": "0.0.2",
-    "@statebox/stbx-js": "0.0.30",
-    "commander": "^2.19.0",
-    "get-stdin": "^6.0.0",
+    "@statebox/pnpro.js": "0.2.1",
+    "@statebox/stbx-js": "0.0.31",
+    "commander": "^4.1.0",
+    "get-stdin": "^7.0.0",
     "ramda": "^0.26.1"
+  },
+  "devDependencies": {
+    "npm-check-updates": "^4.0.1"
   }
 }

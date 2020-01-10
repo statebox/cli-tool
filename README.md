@@ -11,8 +11,12 @@ This is a (temporary) tool that is supposed to do various useful thingss.
 
 ## Installation
 
+Can install tool locally or globally (`-g`) or run once using `npx`.
+
 ```
-npm i -g @statebox/stbx-cli
+npm i stbx # install locally
+npm i -g stbx # or install globally
+npx stbx -V # or run once using npx
 ```
 
 ## Usage
