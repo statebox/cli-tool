@@ -1,6 +1,6 @@
 {
   "name": "stbx",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "description": "This is a (temporary) tool that does various useful statebox things.",
   "main": "./stbx-cli.js",
   "bin": {
@@ -39,8 +39,9 @@
   "dependencies": {
     "@statebox/pnpro.js": "0.2.1",
     "@statebox/stbx-js": "0.0.31",
-    "commander": "^4.1.0",
+    "commander": "^4.1.1",
     "get-stdin": "^7.0.0",
-    "ramda": "^0.26.1"
+    "ramda": "^0.27.0",
+    "zenschnorr": "^1.0.0"
   }
 }

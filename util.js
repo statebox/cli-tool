@@ -69,5 +69,8 @@ async function put_output (out) {
         console.log(out)
     }
 }
+async function put_output_json (out) {
+    return await put_output(JSON.stringify(out))
+}
 
-module.exports = { program, exit_error, exit_success, get_input, get_input_json, put_output }
+module.exports = { program, exit_error, exit_success, get_input, get_input_json, put_output, put_output_json }
